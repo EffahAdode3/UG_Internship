@@ -1,0 +1,85 @@
+
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+   
+}
+
+p{
+    margin: 0;
+}
+
+.imageslogo img{
+ height:80px;
+}
+.container{
+    padding: 5%;
+
+}
+
+.logo_unit{
+    display: flex;
+    justify-content: space-between;
+    gap:10px;
+}
+.unit{
+   /* position: absolute;
+   left: 75%; */
+   top: 50px;
+   color: #153d6c;
+   font-weight: 600;
+   text-decoration: underline #b99d64;
+   margin: 0;
+   text-underline-offset: 4px;
+
+}
+
+.logo_address{
+    display: flex;
+    justify-content: space-between;
+    margin-top: 68px;
+}
+
+.serial_number{
+    display: flex;
+    justify-content: space-between;
+}
+
+.date{
+    
+}
+
+.request_for_attacment{
+ text-align: center;
+ text-decoration: underline;
+ text-underline-offset: 4px;
+}
+
+.address{
+    color: #153d6c;
+}
+
+.email_site{
+    color: #153d6c;
+}
+
+.content_body {
+    display: flex;
+    flex-direction: column;
+}
+
+.director-section {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/* .qrcode2 {
+    margin-right: 20px; 
+} */
+
+.highlighted-text {
+    text-decoration: underline dotted;
+    font-weight: bold; 
+}

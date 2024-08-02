@@ -1,0 +1,153 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Document</title>
+    <style>
+     
+    </style>
+</head>
+<body>
+    <button onclick="Convert_HTML_To_PDF();">Convert HTML to PDF</button>
+    <div class="container" id="contentToPrint"> 
+        <div class="logo_unit">
+            <div class="imageslogo">
+                <img src="./images/Careers_counselling.png" alt="University of Ghana">
+            </div>
+            <p class="unit">CAREERS AND COUNSELLING CENTER</p>
+        </div>
+
+        <div class="serial_number">
+            <strong><p>UGCCC/IL 23-24/10955337</p></strong>
+            <div id="qrcodeTopLeft"></div>
+        </div>
+
+        <div class="date">
+            <strong><p>16 July 2024</p></strong>
+        </div>
+
+        <br>
+
+        <div class="company_name">
+         <p class="highlighted-text">University Of Ghana Computing System</p>
+            <!-- <strong><p>.................................................</p></strong>
+            <strong><p>.................................................</p></strong>
+            <strong><p>.................................................</p></strong> -->
+        </div>
+        <br>
+
+        <div class="request_for_attacment">
+            <b><p>REQUEST FOR ATTACHMENT</p></b>
+        </div>
+
+        <br>
+
+        <div class="content_body">
+            <p>
+                I write to introduce the student below from the University of Ghana,
+                for whom we are requesting an internship opportunity in your reputable organization.
+            </p>
+            <br>
+            <div class="Personal_Information">
+                <p>NAME: <strong>LARTEY, LORINDA LARTETSO</strong></p>
+                <p>CONTACT: <strong>024853859</strong></p>
+                <p>Email: <strong>lllartey011@st.ug.edu.gh</strong></p>
+                <p>COURSE: <strong>BACHELOR OF ARTS</strong></p>
+                <p>Level: <strong>300</strong></p>
+            </div>
+
+            <br>
+
+            <p>
+                This student is looking for a practical internship to
+                consolidate the theoretical knowledge acquired and to gain
+                employability skills such as leadership skills, communication skills,
+                analytical skills, emotional intelligence, self-management,
+                problem-solving, and teamwork.
+            </p>
+            <br>
+            <p>
+                As the University requires students to get employment experience, we would be very grateful
+                if you could offer the above-named student the opportunity
+                to be attached to your organization during the vacation period.
+            </p>
+            <br>
+            <p>
+                It would be appreciated if you could send a copy of your reply 
+                on the acceptance of the student to our email
+                internship@ug.edu.gh for documentation purposes.
+                <br>
+                Thank you.
+                <br><br>
+                Yours faithfully,
+                <br><br>
+                <div class="director-section">
+                    <span>
+                        Bridget Ben-Naimah (Rev.Dr.Mrs.)
+                        <br><br>
+                        (Director)
+                    </span>
+                    <div class="qrcode2" id="qrcodeAfterDirector"></div>
+                </div>
+            </p>
+        </div>
+        
+        <div class="logo_address">
+            <div class="address_email_site">
+                <p class="address">P. O. BOX LG 82, Legon, Accra, Ghana | Tel: +233 (0) 204 999 221</p>
+                <p class="email_site">Email: careers@ug.edu.gh | Website: www.ug.edu.gh/careers</p>
+            </div>
+            <div class="logo_footer">
+                <img src="./images/ug.png" alt="University of Ghana">
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/gh/davidshimjs/qrcodejs/qrcode.min.js"></script>  
+    <script src="https://unpkg.com/jspdf@latest/dist/jspdf.umd.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+    <script>
+        window.jsPDF = window.jspdf.jsPDF;
+
+        // Function to generate QR codes
+        function generateQRCode(id, text) {
+            new QRCode(document.getElementById(id), {
+                text: text,
+                width: 80,
+                height: 80,
+                colorDark: '#000',
+                colorLight: '#fff',
+                correctLevel: QRCode.CorrectLevel.H
+            });
+        }
+
+        // Convert HTML content to PDF
+        function Convert_HTML_To_PDF() {
+            var doc = new jsPDF();
+            
+            // Source HTMLElement or a string containing HTML.
+            var elementHTML = document.querySelector("#contentToPrint");
+
+            doc.html(elementHTML, {
+                callback: function(doc) {
+                    // Save the PDF
+                    doc.save('document-html.pdf');
+                },
+                margin: [10, 10, 10, 10],
+                autoPaging: 'text',    
+                x: 0,
+                y: 0,
+                width: 190, //target width in the PDF document
+                windowWidth: 700 //window width in CSS pixels
+            });
+        }
+
+        // Generate QR codes
+        generateQRCode('qrcodeTopLeft', 'http://jindo.dev.naver.com/collie');
+        generateQRCode('qrcodeAfterDirector', 'http://jindo.dev.naver.com/collie');
+    </script>
+</body>
+</html>
